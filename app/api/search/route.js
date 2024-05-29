@@ -1,7 +1,7 @@
 
 
 import connectMongo  from '@/database/db.js'
-import ProductModal from '@/models/product.js'; 
+import ProductModel from '@/models/product.js'; 
 
 export const GET = async (request) => {
 
@@ -112,7 +112,7 @@ export const GET = async (request) => {
               }
             );
           
-            const countResult = await ProductModal.aggregate(countPipeline);
+            const countResult = await ProductModel.aggregate(countPipeline);
             const totalDocuments = countResult.length > 0 ? countResult[0].totalDocuments : 0;
           
             aggregationPipeline.push(
@@ -124,7 +124,7 @@ export const GET = async (request) => {
               }
             );
 
-            const searchedProducts = await ProductModal.aggregate(aggregationPipeline);
+            const searchedProducts = await ProductModel.aggregate(aggregationPipeline);
             Products = {
                 allGames : false,
                 allProducts : searchedProducts,
@@ -135,8 +135,8 @@ export const GET = async (request) => {
         } else {
             const LIMIT = 12;
             const startIndex = (Number(page) - 1) * LIMIT;
-            const total = await ProductModal.countDocuments({});
-            const limitProducts = await ProductModal.find({}, {
+            const total = await ProductModel.countDocuments({});
+            const limitProducts = await ProductModel.find({}, {
                 _id:1, title:1, rating:1, price:1, discount:1, mainImg:1, saved:1, library:1
             }).sort({ _id: 1 }).limit(LIMIT).skip(startIndex);
             Products = {

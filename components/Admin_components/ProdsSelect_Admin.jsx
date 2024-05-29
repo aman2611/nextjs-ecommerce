@@ -16,7 +16,8 @@ const ProdsSelect_Admin = ({ setBannerList, setSideSecList, setSideSecHeading,
   const [heading, setHeading] = useState(sideSecHeading);
 
   const submitSelected = async () => {
-    const theId = "64668c9b4259575660c6db40"
+    // const theId = "64668c9b4259575660c6db40"
+    const theId = "6651e1fecd463b2e30e32101"
 
     if(goToSelect === 5) {
       var data = {

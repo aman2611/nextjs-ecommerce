@@ -1,7 +1,7 @@
 
 import connectMongo  from '@/database/db.js'
 import mongoose from 'mongoose';
-import ProductModal from '@/models/product.js';
+import ProductModel from '@/models/product.js';
 
 
 export const PATCH = async (request, { params }) => {
@@ -15,7 +15,7 @@ export const PATCH = async (request, { params }) => {
             return new Response("Product not found", { status: 404 });
         }
 
-        const product = await ProductModal.findById(_id);
+        const product = await ProductModel.findById(_id);
 
         const index = product.saved.findIndex((val) => val === String(userId));
 
@@ -25,7 +25,7 @@ export const PATCH = async (request, { params }) => {
             product.saved = product.saved.filter((val) => val !== String(userId));
         }
        
-        const updatedProduct = await ProductModal.findByIdAndUpdate(_id, product, {new: true });
+        const updatedProduct = await ProductModel.findByIdAndUpdate(_id, product, {new: true });
 
         return new Response("Successfully Added To Fav", { status: 200 });
     } catch (error) {

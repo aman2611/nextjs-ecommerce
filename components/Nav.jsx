@@ -223,7 +223,7 @@ const Nav = ({ userId, userName }) => {
                 // onBlur={handleBlur}
                 type='text' name="search" 
                 placeholder='Search'
-                className='w-[300px] h-max bg-[#202020] text-white box-border
+                className='w-[1050px] h-max bg-[#202020] text-white box-border
                 hover:border-[#ffffff84] focus:border-[#ffffff84] 
                 border border-[#ffffff60] tracking-[1px] pl-8 pr-8 rounded-[8px]
                 focus:outline-none text-[14px] leading-7 placeholder:text-[#989898]'/>

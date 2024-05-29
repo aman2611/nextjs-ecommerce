@@ -2,7 +2,7 @@
 
 import connectMongo  from '@/database/db.js'
 import OrderModal from '@/models/orders'
-import ProductModal from '@/models/product'
+import ProductModel from '@/models/product'
 import UserModal from '@/models/user'
 
 export const GET = async () => {
@@ -10,7 +10,7 @@ export const GET = async () => {
         await connectMongo()
 
         const allOrders = await OrderModal.find({},{paymentStatus:1});
-        const allProducts = await ProductModal.find({},{genre:1, platform:1});
+        const allProducts = await ProductModel.find({},{genre:1, platform:1});
         const allUsers = await UserModal.find({},{googleAccount:1, isAdmin:1});
 
         return new Response(JSON.stringify({

@@ -1,7 +1,7 @@
 
 
 import connectMongo  from '@/database/db.js'
-import ProductModal from '@/models/product.js'; 
+import ProductModel from '@/models/product.js'; 
 
 export const GET = async (request) => {
 
@@ -11,7 +11,7 @@ export const GET = async (request) => {
     try {
         await connectMongo()
 
-        const Products = await ProductModal.find(
+        const Products = await ProductModel.find(
             {
                 $or: [
                 { title: { $regex: suggQuery, $options: 'i' } }

@@ -36,10 +36,9 @@ const Banner = () => {
   const fetchTitles = async () => {
     const response = await fetch("/api/banner&sideSec")
     const data = await response.json();
-
-    setBannerList(data[0].bannerTitles);
-    setSideSecList(data[0].sideSecTitles)
-    setSideSecHeading(data[0].sideHeading)
+    setBannerList(data[0]?.bannerTitles);
+    setSideSecList(data[0]?.sideSecTitles)
+    setSideSecHeading(data[0]?.sideHeading)
     setLoading(false)
   }
 

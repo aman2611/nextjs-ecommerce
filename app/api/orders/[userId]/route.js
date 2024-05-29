@@ -2,7 +2,7 @@
 
 import connectMongo  from '@/database/db.js'
 import OrderModal from '@/models/orders'
-import ProductModal from '@/models/product'
+import ProductModel from '@/models/product'
 
 
 export const GET = async (request, { params }) => {
@@ -29,7 +29,7 @@ export const POST = async (request, { params }) => {
         await connectMongo();
 
         const updateProduct = async (productId, userId) => {
-            const product = await ProductModal.findOne({ _id: productId });
+            const product = await ProductModel.findOne({ _id: productId });
           
             product.library = [...product.library, userId];
 

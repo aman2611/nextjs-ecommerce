@@ -9,7 +9,7 @@ const Loading = () => {
         <div className='w-full h-max flex flex-col
         gap-y-4 py-4 border-b-[0.8px] border-zinc-500'>
             <div className='w-full h-max flex items-center justify-center'>
-                <div className='xl:w-[60%] lg:w-[65%] sm:w-[70%] animate-pulse
+                <div className='xl:w-[100%] lg:w-[65%] sm:w-[70%] animate-pulse
                 w-[60%] h-[42px] rounded-[7px] bg-[#3f3f3f]'
                 style={{
                     animationDelay: `${4*0.05}s`,

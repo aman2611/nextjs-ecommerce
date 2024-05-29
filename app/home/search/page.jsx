@@ -78,9 +78,8 @@ const SearchPage = () => {
     }
   };
 
-  var platform_options = ['Windows', 'Playstation', 'Xbox']
-  var genre_options = ['Action', 'Adventure', 'Puzzle', 'Crime', 
-  'Fantasy', 'Sci-Fi', 'Drama', 'Horror', 'Mystery' ]
+  var platform_options = ['Windows', 'Playstation', 'Xbox', 'Nintendo','Android', 'iOS']
+  var genre_options = ['Action', 'Adventure', 'City Builder', 'Crime', 'Drama', 'Fantasy', 'Horror', 'Mystery', 'Puzzle','Roguelike', 'RPG','Sci-Fi', 'Shooter','Simulation','Strategy' ]
 
   const priceOptions = [
     {

@@ -42,14 +42,14 @@ const SideMenu_Admin = ({ setOpenMenuDiv }) => {
 
   return (
     <>
-    <div className="w-[250px] h-full bg-[#f0f0f0] flex flex-col gap-y-2 px-2 py-3">
+    <div className="w-[250px] h-full bg-[#202020] text-white flex flex-col gap-y-2 px-2 py-3">
         {menuItems.map((data,i)=>(
             <Link key={i} href={`${data.key}`} >
                 <button onClick={()=>setOpenMenuDiv(false)}
                 className={'w-full h-max px-3 py-1.5 text-[16px] '+ 
                 ' flex items-center rounded-md '+
-                (pathname === data.key ? ' font-medium bg-blue-500 text-white' 
-                : ' bg-[#f0f0f0] hover:bg-[#dbdcdf] text-[#121111]')}>
+                (pathname === data.key ? ' font-medium bg-[#202020] text-white' 
+                : ' bg-[#202020] hover:text-[#ffffff66] text-white')}>
                     {data.label}
                 </button>
             </Link>

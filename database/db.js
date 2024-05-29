@@ -12,7 +12,7 @@ const connectMongo = async () => {
   }
 
   try {
-    await mongoose.connect(process.env.LOCALDB_MONGO, {
+    await mongoose.connect(process.env.MONGO_URI, {
       dbName: "game_store",
       useNewUrlParser: true,
       useUnifiedTopology: true,

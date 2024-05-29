@@ -58,7 +58,7 @@ const TestData = () => {
                 <p>
                   Any queries contact - 
                   <span className="font-medium underline hover:text-blue-600">
-                    <a href='mailto:nathsai055@gmail.com'>Sainath Reddy</a>
+                    <a href='mailto:amanprakash2611@gmail.com'>Aman Prakash</a>
                   </span>
                 </p>
               </div>

@@ -12,7 +12,7 @@ import { CheckoutContext } from '@/context/CheckoutContext'
 import { LibraryIconBlocks, LibraryIconBlocksSmall } from '@/assets/LogoSvgs'
 
 const DetailsSection = ({userId, id, mainImg, description,
-  title, year, rating ,genre, platform, price, discount, library}) => {
+  title, year, rating ,genre, platform, price, discount, library, developer, publisher, ageRating}) => {
 
   const router = useRouter();
 
@@ -27,9 +27,7 @@ const DetailsSection = ({userId, id, mainImg, description,
   var productPrice = parseInt(getPrice(price, discount))
 
   const discountAmount = (price * discount) / 100;
- 
-  // var genre_options = ['Action', 'Adventure', 'Puzzle', 'Crime', 
-  // 'Fantasy', 'Sci-Fi', 'Drama', 'Horror', 'Mystery' ]
+
 
   const handleBagBtn = async () => {
     if(userId) {
@@ -101,7 +99,7 @@ const DetailsSection = ({userId, id, mainImg, description,
   
   return (
     <>
-    <div className='w-full min-[900px]:max-w-[400px] h-max text-white overflow-hidden flex flex-col relative pb-1'>
+    <div className='w-[90%] min-[900px]:max-w-[400px] h-max text-white overflow-hidden flex flex-col relative pb-1'>
 
       {/* <div className='w-[40px] h-[40px] absolute bg-[#606060d7] top-0 right-0
       rounded-full flex items-center justify-center' >
@@ -145,20 +143,41 @@ const DetailsSection = ({userId, id, mainImg, description,
         {/* <div className='w-full h-[0.8px] rounded-full bg-[#ffffff60]'></div> */}
 
         <div className='w-full h-max flex items-center justify-between'>
-          <p className='text-[18px] text-gray-300'>Year</p>
+          <p className='text-[18px] text-gray-300'>Release Year</p>
           <p className='text-[18px]'>{year}</p>
         </div>
 
         <div className='w-full h-[0.8px] rounded-full bg-[#ffffff60]'></div>
 
         <div className='w-full h-max flex items-center justify-between'>
-          <p className='text-[18px] text-gray-300'>Platfom</p>
+          <p className='text-[18px] text-gray-300'>Platform</p>
           <div className='w-max h-max flex space-x-2'>
             {platform.map((each, i) => {
             return <div key={i} onClick={()=>goToPlatform(each)}
             className='w-max h-max cursor-pointer' > 
             {platformLogo(each)} </div> })} 
           </div>
+        </div>
+
+        <div className='w-full h-[0.8px] rounded-full bg-[#ffffff60]'></div>
+
+        <div className='w-full h-max flex items-center justify-between'>
+          <p className='text-[18px] text-gray-300'>Developer</p>
+          <p className='text-[18px]'>{developer}</p>
+        </div>
+
+        <div className='w-full h-[0.8px] rounded-full bg-[#ffffff60]'></div>
+
+        <div className='w-full h-max flex items-center justify-between'>
+          <p className='text-[18px] text-gray-300'>Publisher</p>
+          <p className='text-[18px]'>{publisher}</p>
+        </div>
+
+        <div className='w-full h-[0.8px] rounded-full bg-[#ffffff60]'></div>
+
+        <div className='w-full h-max flex items-center justify-between'>
+          <p className='text-[18px] text-gray-300'>Age Rating</p>
+          <p className='text-[18px]'>{ageRating}</p>
         </div>
 
         <div className='w-full h-[0.8px] rounded-full bg-[#ffffff60]'></div>

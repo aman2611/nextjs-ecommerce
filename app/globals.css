@@ -23,7 +23,8 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 8.5px;
+  /* width: 8.5px; */
+  width: 0px;
 }
 
 body::-webkit-scrollbar-thumb {

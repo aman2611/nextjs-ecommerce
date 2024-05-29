@@ -6,6 +6,9 @@ const productSchema = new Schema({
   rating: { type: Number, required: true },
   platform: { type: Object, required: true },
   year: { type: Number, required: true },
+  developer: { type: String, required: true }, 
+  publisher: { type: String, required: true }, 
+  ageRating: { type: String, required: true }, 
   price: { type: Number, required: true },
   discount: { type: Number, required: true },
   description: { type: String, required: true },
@@ -18,6 +21,6 @@ const productSchema = new Schema({
   timestamps: true,
 });
 
-var ProductModal = models.products || model('products', productSchema);
+var ProductModel = models.products || model('products', productSchema);
 
-export default ProductModal;
+export default ProductModel;

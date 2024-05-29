@@ -14,7 +14,7 @@ export default function HomeLoading() {
               style={{
                 animationDelay: `${1*0.05}s`,
                 animationDuration: "1s", }}></div>
-              <div className='w-[300px] h-[28px] rounded-[7px] bg-[#3f3f3f] animate-pulse'
+              <div className='w-[1050px] h-[28px] rounded-[7px] bg-[#3f3f3f] animate-pulse'
               style={{
                 animationDelay: `${2*0.05}s`,
                 animationDuration: "1s", }}></div>
@@ -39,7 +39,7 @@ export default function HomeLoading() {
         <div className='w-full min-h-screen max-h-max mt-[70px]'>
           <div className="w-full min-h-screen h-max m-0 flex justify-between">
   
-            <div className="xl:w-[76%] w-[100%] h-max flex flex-col">
+            <div className="xl:w-[86%] w-[100%] h-max flex flex-col">
   
               <div className="w-full h-max overflow-hidden
               text-white min-[950px]:block hidden pt-6 px-5">

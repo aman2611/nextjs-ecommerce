@@ -31,6 +31,18 @@ const HomeLayoutLoading = () => {
             style={{
             animationDelay: `${5*0.05}s`,
             animationDuration: "1s", }}></div>
+            <div className='w-[100px] h-[35px] rounded-[7px] bg-[#3f3f3f] animate-pulse'
+            style={{
+            animationDelay: `${6*0.05}s`,
+            animationDuration: "1s", }}></div>
+            <div className='w-[45px] h-[45px] rounded-full bg-[#3f3f3f] animate-pulse'
+            style={{
+            animationDelay: `${7*0.05}s`,
+            animationDuration: "1s", }}></div>
+            <div className='w-[80px] h-[35px] rounded-[7px] bg-[#3f3f3f] animate-pulse'
+            style={{
+            animationDelay: `${8*0.05}s`,
+            animationDuration: "1s", }}></div>
         </div>
         </div>
       </div>

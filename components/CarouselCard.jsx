@@ -19,8 +19,7 @@ const CarouselCard = ({data, userId}) => {
   const [likeLoading, setLikeLoading] = useState(false);
     
   //bg-[#3f3f3fa6]
-  var genre_options = ['Action', 'Adventure', 'Puzzle', 'Crime', 
-  'Fantasy', 'Sci-Fi', 'Drama', 'Horror', 'Mystery' ]
+  var genre_options = ['Action', 'Adventure', 'City Builder', 'Crime', 'Drama', 'Fantasy', 'Horror', 'Mystery', 'Puzzle','Roguelike', 'RPG','Sci-Fi', 'Shooter','Simulation','Strategy' ]
   
   var productPrice = parseInt(getPrice(data.price, data.discount))
 

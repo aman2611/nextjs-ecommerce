@@ -24,7 +24,7 @@ const CreateProForm_Admin = ({ allProducts, setAllProducts,
 
   const onFinish = async (productInfo) => { 
 
-    if(adminId === "649de1b33c34fa9777057510") {
+    if(adminId === "6651e34ccd463b2e30e32116") {
       message.info(`Restricted for admin@demo.com`)
     } else {
       if(productInfo.images.length >= 3){
@@ -50,8 +50,8 @@ const CreateProForm_Admin = ({ allProducts, setAllProducts,
               method: "POST",
               body: JSON.stringify(productInfo),
             });
-            const data = await response.json();
             if (response.ok) {
+              const data = await response.json();
               allProducts.push(data)
               form.resetFields()
               message.success('Product successfully added to the DB.')
@@ -85,14 +85,14 @@ const CreateProForm_Admin = ({ allProducts, setAllProducts,
 
   const formItemRules = [
     {
-      required: true,
+      required: false,
       // message: 'Please fill this field!',
     },
   ]
   
-  var platform_options = ['Windows', 'Playstation', 'Xbox']
-  var genre_options = ['Action', 'Adventure', 'Puzzle', 'Crime', 
-  'Fantasy', 'Sci-Fi', 'Drama', 'Horror', 'Mystery' ]
+  var platform_options = ['Windows', 'Playstation', 'Xbox', 'Nintendo','Android', 'iOS']
+  var genre_options = ['Action', 'Adventure', 'City Builder', 'Crime', 'Drama', 'Fantasy', 'Horror', 'Mystery', 'Puzzle','Roguelike', 'RPG','Sci-Fi', 'Shooter','Simulation','Strategy' ]
+  var ageRating_options = ['0+ Everyone', '10+ Everyone 10+', '13+ Teen', '17+ Mature', '18+ Adult', 'RP Rating Pending']
 
   return (
     <div className='xl:px-14 lg:px-10 px-6 '>
@@ -117,8 +117,8 @@ const CreateProForm_Admin = ({ allProducts, setAllProducts,
 
       <div className='grid lg:grid-cols-2 gap-y-2 gap-x-10 w-full'>
         <Form.Item label="Rating" name='rating' rules={formItemRules} >
-          <InputNumber addonBefore={<StarOutlined />} placeholder={'8.5 or 9.8'}
-          min={1} max={10} className='w-full' />
+          <InputNumber addonBefore={<StarOutlined />} placeholder={'3.8 or 4.6'}
+          min={1} max={5} className='w-full' />
         </Form.Item>
 
         <Form.Item label="Platform" name='platform' rules={formItemRules} >
@@ -131,10 +131,28 @@ const CreateProForm_Admin = ({ allProducts, setAllProducts,
       </div>
 
       <div className='grid lg:grid-cols-3 gap-y-2 gap-x-10 w-full'>
-        <Form.Item label="Year" name='year' rules={formItemRules} >
+        <Form.Item label="Release Year" name='year' rules={formItemRules} >
           <InputNumber addonBefore={<CalendarOutlined />} placeholder={'Eg: 2013'}
-          min={2000} max={2023} className='w-full' />
+          min={2000} max={2024} className='w-full' />
         </Form.Item>
+
+        <Form.Item label="Publisher" name='publisher' rules={formItemRules} >
+          <Input />
+        </Form.Item>
+
+        <Form.Item label="Developer" name='developer' rules={formItemRules} >
+          <Input />
+        </Form.Item>
+
+        <Form.Item label="Age Rating" name='ageRating' rules={formItemRules} >
+          <Select  allowClear >  
+            {ageRating_options.map((val, i) => (
+              <Select.Option key={i} value={val}>{val}</Select.Option>
+            ))}
+          </Select>
+        </Form.Item>
+
+
 
         <Form.Item label="Price" name='price' rules={formItemRules} >
           <InputNumber addonBefore="₹" placeholder={'max up to 10000/-'}

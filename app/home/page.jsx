@@ -24,7 +24,7 @@ const Home = () => {
   const [isLoading, setLoading] = useState(true);
   const [allProducts, setAllProducts] = useState(null);
   const [bannerProducts, setBannerProducts] = useState([]);
-  const [sideSecProducs, setsideSecProducs] = useState([]);
+  const [sideSecProducts, setsideSecProducts] = useState([]);
   const [sideHeading, setSideHeading] = useState('');
 
   const fetchProductsForAll = async () => {
@@ -34,7 +34,7 @@ const Home = () => {
       if (response.ok) {
         setAllProducts(data.allProducts)
         setBannerProducts(data.bannerProducts)
-        setsideSecProducs(data.sideSecProducts)
+        setsideSecProducts(data.sideSecProducts)
         setSideHeading(data.sideSecHeading)
       }
     } catch (error) {
@@ -59,7 +59,7 @@ const Home = () => {
 
   return (
     <div className="w-full min-h-screen h-max m-0 flex justify-between">
-      <div className="xl:w-[76%] w-[100%] h-max flex flex-col">
+      <div className="xl:w-[86%] w-[100%] h-max flex flex-col items-center mx-4">
         <div className="w-full h-max overflow-hidden
         text-white min-[950px]:block hidden pt-6 px-5">
           <Carousel autoplay={true} >
@@ -82,7 +82,7 @@ const Home = () => {
           </div>
           <p className="text-[#f8f6f6] xl:hidden block">{sideHeading}</p>
           <div className="xl:hidden grid xl:grid-cols-3 sm:grid-cols-2 gap-4" >
-            {sideSecProducs.map((data,i)=>(
+            {sideSecProducts.map((data,i)=>(
               <div key={i} >
                 <SideSectionCard data={data} userId={userId}/>
               </div>
@@ -114,7 +114,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="xl:w-[24%] w-[0%] h-max xl:flex flex-col hidden sticky top-[70px] right-0">
+      {/* <div className="xl:w-[24%] w-[0%] h-max xl:flex flex-col hidden sticky top-[70px] right-0">
         <div className="sideSecConDiv flex flex-col gap-y-4 py-6 pr-6 pl-3 " >
           <p className=" w-full h-max text-white text-[22px] ml-[2px]">{sideHeading}</p>
           {sideSecProducs.map((data,i)=>(
@@ -123,10 +123,9 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
 
 export default Home
-

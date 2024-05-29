@@ -91,15 +91,15 @@ const page = ({ params }) => {
     <>
     <div className='w-full h-max text-white flex 
     min-[900px]:flex-row flex-col min-[900px]:justify-center 
-    min-[900px]:items-start items-center'>
+    min-[900px]:items-start items-center overflow-hidden'>
 
-      <div className='min-[900px]:max-w-[65%] w-full h-max 2xl:pl-[65px] 
-      min-[900px]:pl-[40px] min-[900px]:pr-[15px] pt-6 min-[900px]:pb-10 pl-6 pr-6'>
+      <div className='min-[900px]:max-w-[60%] w-full h-max 2xl:pl-[65px] 
+      min-[900px]:pl-[20px] min-[900px]:pr-[15px] pt-6 min-[900px]:pb-10 pl-6 pr-6 justify-start '>
         <ImgsSection images={data.images} description={data.description}
           mainImg={data.mainImg} videoLinkKey={data.videoLinkKey} />
       </div>
 
-      <div className='xl:sticky xl:top-[70px] xl:right-0 min-[900px]:min-w-[35%] min-[900px]:max-w-[35%] w-full h-max 
+      <div className='overflow-x-hidden min-[900px]:min-w-[35%] min-[900px]:max-w-[35%] w-full h-max 
         flex 2xl:flex-row flex-col 2xl:justify-start gap-x-6 
         2xl:pr-[65px] min-[900px]:pr-[40px] min-[900px]:pl-[15px] 
         min-[900px]:pt-6 min-[900px]:pb-10 pl-6 pr-6 '>
@@ -117,7 +117,11 @@ const page = ({ params }) => {
             platform={data.platform}
             price={data.price}
             discount={data.discount}
-            library={data.library} />
+            library={data.library} 
+            developer ={data.developer}
+            publisher={data.publisher}
+            ageRating={data.ageRating}
+            />
           </div>
 
           

@@ -24,7 +24,7 @@ const Nav_Admin = ({ setOpenMenuDiv, openMenuDiv, userName }) => {
 
   return (
     <>
-    <div className='w-full h-[70px] bg-blue-600 text-white
+    <div className='w-full h-[70px] bg-[#2a2a2a] text-white
       flex items-center justify-between xl:px-5 md:px-4 px-2 shadow-md'>
 
       <div className='w-max h-max flex items-center justify-center gap-x-3'>

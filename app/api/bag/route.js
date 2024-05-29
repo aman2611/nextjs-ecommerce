@@ -1,6 +1,6 @@
 
 import connectMongo  from '@/database/db.js'
-import ProductModal from '@/models/product'
+import ProductModel from '@/models/product'
 import UserModal from '@/models/user';
 
 export const GET = async (request) => {
@@ -11,7 +11,7 @@ export const GET = async (request) => {
     try {
         await connectMongo()
 
-        const products = await ProductModal.find({ _id: { $in: bagData } },{
+        const products = await ProductModel.find({ _id: { $in: bagData } },{
             _id:1, title:1, rating:1, price:1, discount:1, mainImg:1,
             platform:1, genre:1,
         })

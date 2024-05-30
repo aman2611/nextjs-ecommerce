@@ -13,7 +13,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="bg-[#2a2a2a] text-white py-4 px-2 w-full">
+    <footer className="bg-[#2a2a2a] text-white pt-4 px-2 w-full">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between">
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
@@ -97,7 +97,9 @@ const Footer = () => {
         </div>
 
       </div>
-
+      <div className="h-9 mt-4 py-1 text-white text-center bg-[#333333]">
+        For Educational Purposes Only
+      </div>
     </footer>
   );
 };
